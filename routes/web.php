@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Not using any controllers, returning the view directly from the router file
+Route::get('/greetings', function () {
+    return view('greetings');
+});
