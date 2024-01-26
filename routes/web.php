@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GreetingsController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Redefine the route for the home page using a controller:
+Route::get('/', [HomeController::class, 'index']);
 
 // Not using any controllers, returning the view directly from the router file
 // Route::get('/greetings', function () {
