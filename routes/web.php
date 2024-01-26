@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GreetingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,9 @@ Route::get('/', function () {
 });
 
 // Not using any controllers, returning the view directly from the router file
-Route::get('/greetings', function () {
-    return view('greetings');
-});
+// Route::get('/greetings', function () {
+//     return view('greetings');
+// });
+
+// Using the index() method in the GreetingsController class 
+Route::get('/greetings', [GreetingsController::class, 'index']); // The preferred way
